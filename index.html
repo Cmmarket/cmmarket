@@ -1,10 +1,212 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="CM MARKET multilingual Asian food catalog"><title>CM MARKET 3.0 | Asian Food Import & Distribution</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body>
-<header><a href="#home"><img src="assets/logo.jpg" alt="CM MARKET"></a><button id="menu" aria-label="Menu">☰</button><nav><a href="#about" data-t="navAbout"></a><a href="#products" data-t="navProducts"></a><a href="#brands" data-t="navBrands"></a><a href="#contact" data-t="navInquiry"></a></nav><div class="lang-switch"><button data-lang="ko">KO</button><button data-lang="en">EN</button><button data-lang="vi">VI</button></div></header>
-<main><section class="hero" id="home"><div><p class="eyebrow">PREMIUM ASIAN FOOD IMPORT</p><h1 data-t="heroTitle"></h1><p data-t="heroBody"></p><div class="actions"><a class="btn dark" href="#products" data-t="viewProducts"></a><a class="btn light" href="#contact" data-t="wholesaleInquiry"></a></div></div><div class="collage" aria-label="대표 제품 슬라이드"><img id="heroMain" class="main hero-product" src="assets/seagrape.jpg" alt="Sea grapes"><img id="heroSideA" class="a hero-product" src="assets/codo-salt.jpg" alt="Salt coffee"><img id="heroSideB" class="b hero-product" src="assets/q-ngon.jpg" alt="Ngon coffee"><div class="hero-dots" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span></div></div></section>
-<section class="metrics"><div><strong>16</strong><span data-t="metricProducts"></span></div><div><strong>90%</strong><span data-t="metricVietnam"></span></div><div><strong>B2B</strong><span data-t="metricB2B"></span></div></section>
-<section class="section about" id="about"><div><p class="eyebrow">ABOUT CM MARKET</p><h2 data-t="aboutTitle"></h2></div><div><p data-t="aboutP1"></p><p data-t="aboutP2"></p></div></section>
-<section class="section products" id="products"><div class="head"><div><p class="eyebrow">PRODUCT CATALOG</p><h2 data-t="catalogTitle"></h2></div><div class="tools"><input id="search"><select id="brand"><option value="all"></option></select></div></div><div id="filters" class="filters"></div><div id="grid" class="grid"></div><p id="empty" class="empty" data-t="empty"></p></section>
-<section class="section brands" id="brands"><p class="eyebrow">OUR BRANDS</p><h2 data-t="brandsTitle"></h2><div id="brandCloud" class="brandCloud"></div></section>
-<section class="contact" id="contact"><div><p class="eyebrow">WHOLESALE INQUIRY</p><h2 data-t="contactTitle"></h2><p data-t="contactBody"></p><div class="links"><a href="tel:0319236255">031-923-6255</a><a href="mailto:kjh910418@gmail.com">kjh910418@gmail.com</a><p><strong data-t="officeLabel"></strong><span data-t="officeAddress"></span></p><p><strong data-t="warehouseLabel"></strong><span data-t="warehouseAddress"></span></p></div></div><form id="form"><label><span data-t="company"></span><input id="company"></label><label><span data-t="contactPerson"></span><input id="person" required></label><label><span data-t="phone"></span><input id="phone" required></label><label><span data-t="email"></span><input id="email" type="email"></label><label><span data-t="message"></span><textarea id="message" rows="5" required></textarea></label><button class="btn dark" data-t="emailInquiry"></button></form></section></main>
-<footer><img src="assets/logo.jpg" alt="CM MARKET"><div><strong>CM MARKET</strong><p>Asian Food Import & Distribution</p></div><div class="footer-info">031-923-6255<br>kjh910418@gmail.com<br><span data-t="officeAddress"></span><br><span data-t="warehouseAddress"></span></div><small>© 2026 CM MARKET. All Rights Reserved.</small></footer>
-<div id="modal" class="modal"><div class="backdrop" data-close></div><article><button data-close class="close">×</button><div class="mimg"><img id="mImage"></div><div class="mcopy"><p class="eyebrow" id="mBrand"></p><h2 id="mName"></h2><p id="mFeature"></p><dl><div><dt data-t="origin"></dt><dd id="mOrigin"></dd></div><div><dt data-t="netWeight"></dt><dd id="mWeight"></dd></div><div><dt data-t="type"></dt><dd id="mType"></dd></div><div><dt data-t="cartonPack"></dt><dd id="mCarton"></dd></div><div><dt data-t="productSize"></dt><dd id="mProduct"></dd></div><div><dt data-t="cartonSize"></dt><dd id="mCartonSize"></dd></div></dl><a href="#contact" class="btn dark" data-close data-t="askProduct"></a></div></article></div><a class="mobile" href="#contact" data-t="mobileInquiry"></a><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="베트남을 중심으로 아시아의 다양한 식품을 수입·유통하는 CM마켓입니다.">
+  <title>CM MARKET | 아시아 식품 수입·유통</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="CM MARKET 홈">
+      <img src="assets/logo.jpg" alt="CM MARKET 로고">
+    </a>
+    <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="#about">회사소개</a>
+      <a href="#products">제품소개</a>
+      <a href="#brands">브랜드</a>
+      <a href="#contact">문의하기</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">ASIAN FOOD IMPORT & DISTRIBUTION</p>
+        <h1>아시아의 다양한 맛을<br>국내에 소개합니다.</h1>
+        <p class="lead">CM마켓은 베트남 식품을 중심으로 중국 및 아시아 각국의 커피, 스낵, 건강식품을 수입·유통합니다.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#products">제품 둘러보기</a>
+          <a class="btn secondary" href="#contact">도매·입점 문의</a>
+          <a class="btn secondary" href="https://smartstore.naver.com/chaeman" target="_blank" rel="noopener noreferrer">온라인샵 바로가기</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-card large"><img src="assets/sea-grapes.jpg" alt="바다포도"></div>
+        <div class="hero-card small top"><img src="assets/salt-coffee.jpg" alt="솔트 커피"></div>
+        <div class="hero-card small bottom"><img src="assets/banana-chips.png" alt="바나나칩"></div>
+      </div>
+    </section>
+
+    <section class="intro strip">
+      <div>
+        <strong>90%</strong>
+        <span>베트남 중심 상품 구성</span>
+      </div>
+      <div>
+        <strong>ASIA</strong>
+        <span>중국 및 아시아 식품 소싱</span>
+      </div>
+      <div>
+        <strong>B2B</strong>
+        <span>도매·유통·입점 상담</span>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">ABOUT CM MARKET</p>
+        <h2>좋은 제품을 발견하고,<br>더 가까이 전합니다.</h2>
+      </div>
+      <div class="about-copy reveal">
+        <p>CM마켓은 베트남 식품을 중심으로 아시아 각국의 다양한 식품을 국내에 소개하는 수입·유통 전문 기업입니다.</p>
+        <p>제품의 품질과 시장성을 꼼꼼히 살피고, 소비자와 유통 파트너가 만족할 수 있는 제품을 안정적으로 공급합니다.</p>
+      </div>
+    </section>
+
+    <section class="section products" id="products">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">OUR PRODUCTS</p>
+        <h2>CM마켓의 주요 제품</h2>
+        <p>커피와 차, 스낵, 건강식품까지 다양한 아시아 식품을 소개합니다.</p>
+      </div>
+
+      <div class="filter-tabs reveal" role="tablist">
+        <button class="active" data-filter="all">전체</button>
+        <button data-filter="coffee">커피·음료</button>
+        <button data-filter="snack">스낵·디저트</button>
+        <button data-filter="food">기타 식품</button>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card reveal" data-category="food">
+          <img src="assets/sea-grapes.jpg" alt="바다포도">
+          <div><span>OTHER FOOD</span><h3>바다포도</h3><p>톡톡 터지는 식감이 매력적인 해조류 식품</p></div>
+        </article>
+        <article class="product-card reveal" data-category="coffee">
+          <img src="assets/salt-coffee.jpg" alt="베트남 솔트커피">
+          <div><span>COFFEE</span><h3>베트남 솔트커피</h3><p>부드러운 크림과 짭조름한 풍미의 인스턴트 커피</p></div>
+        </article>
+        <article class="product-card reveal" data-category="coffee">
+          <img src="assets/coconut-coffee.jpg" alt="코코넛 커피">
+          <div><span>COFFEE</span><h3>코코넛 커피</h3><p>고소한 코코넛 향을 담은 베트남 믹스커피</p></div>
+        </article>
+        <article class="product-card reveal" data-category="coffee">
+          <img src="assets/black-coffee.jpg" alt="블랙 인스턴트커피">
+          <div><span>COFFEE</span><h3>블랙 인스턴트커피</h3><p>간편하게 즐기는 진한 블랙커피</p></div>
+        </article>
+        <article class="product-card reveal" data-category="coffee">
+          <img src="assets/arabica-coffee.jpg" alt="아라비카 3in1">
+          <div><span>COFFEE</span><h3>아라비카 3 in 1</h3><p>진한 맛의 대용량 인스턴트 커피믹스</p></div>
+        </article>
+        <article class="product-card reveal" data-category="coffee">
+          <img src="assets/good-morning-coffee.png" alt="굿모닝 커피">
+          <div><span>COFFEE</span><h3>굿모닝 커피</h3><p>부드럽고 균형 잡힌 데일리 커피믹스</p></div>
+        </article>
+        <article class="product-card reveal" data-category="coffee">
+          <img src="assets/matcha-mix.jpg" alt="말차 믹스">
+          <div><span>BEVERAGE</span><h3>말차 믹스</h3><p>차갑게도 따뜻하게도 즐기는 크리미 말차</p></div>
+        </article>
+        <article class="product-card reveal" data-category="coffee">
+          <img src="assets/cacao-husk-tea.jpg" alt="카카오 허스크티">
+          <div><span>TEA</span><h3>카카오 허스크티</h3><p>로스팅한 카카오 껍질 100%의 은은한 차</p></div>
+        </article>
+        <article class="product-card reveal" data-category="snack">
+          <img src="assets/dark-chocolate.jpg" alt="카카오 다크초콜릿">
+          <div><span>DESSERT</span><h3>카카오 다크초콜릿</h3><p>카카오의 깊은 맛을 살린 큐브형 초콜릿</p></div>
+        </article>
+        <article class="product-card reveal" data-category="snack">
+          <img src="assets/coffee-bean-candy.jpg" alt="커피빈 캔디">
+          <div><span>CANDY</span><h3>커피빈 캔디</h3><p>아이스민트와 카페라떼 두 가지 맛</p></div>
+        </article>
+        <article class="product-card reveal" data-category="snack">
+          <img src="assets/banana-chips.png" alt="바나나칩">
+          <div><span>SNACK</span><h3>바나나칩</h3><p>바삭하고 달콤한 열대과일 스낵</p></div>
+        </article>
+        <article class="product-card reveal" data-category="snack">
+          <img src="assets/coconut-cracker.jpg" alt="코코넛 크래커">
+          <div><span>SNACK</span><h3>코코넛 크래커</h3><p>고소한 코코넛 풍미의 바삭한 크래커</p></div>
+        </article>
+        <article class="product-card reveal" data-category="snack">
+          <img src="assets/pumpkin-snack.jpg" alt="호박씨볼 스낵">
+          <div><span>SNACK</span><h3>호박씨볼 스낵</h3><p>핑크솔트 커피맛의 개별포장 스낵</p></div>
+        </article>
+        <article class="product-card reveal" data-category="snack">
+          <img src="assets/granola.jpg" alt="초콜릿 그래놀라">
+          <div><span>GRANOLA</span><h3>초콜릿 그래놀라</h3><p>견과류와 코코넛을 더한 든든한 간식</p></div>
+        </article>
+        <article class="product-card reveal" data-category="food">
+          <img src="assets/sweet-corn.jpg" alt="스위트콘">
+          <div><span>OTHER FOOD</span><h3>스위트콘</h3><p>업소용으로 활용하기 좋은 대용량 옥수수</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section strengths">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">WHY CM MARKET</p>
+        <h2>함께 성장하는 유통 파트너</h2>
+      </div>
+      <div class="strength-grid">
+        <article class="reveal"><b>01</b><h3>Asian Food Specialist</h3><p>베트남 중심의 다양한 아시아 식품을 발굴합니다.</p></article>
+        <article class="reveal"><b>02</b><h3>Reliable Import</h3><p>제품과 제조사를 검토해 안정적인 수입을 지향합니다.</p></article>
+        <article class="reveal"><b>03</b><h3>B2B Distribution</h3><p>도매, 유통, 기업 납품 등 다양한 거래를 상담합니다.</p></article>
+        <article class="reveal"><b>04</b><h3>Partnership</h3><p>국내 거래처와 장기적인 협력 관계를 만들어갑니다.</p></article>
+      </div>
+    </section>
+
+    <section class="section brands" id="brands">
+      <div class="section-heading reveal">
+        <p class="eyebrow">BRANDS</p>
+        <h2>다양한 브랜드와 제품을<br>국내 시장에 연결합니다.</h2>
+      </div>
+      <div class="brand-list reveal">
+        <span>CODO</span><span>TRAN QUANG</span><span>CHUBLE</span><span>DAN-D PAK</span>
+        <span>BEFRESCO</span><span>BIBICA</span><span>TOP COCO</span><span>THAI BINH</span>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">CONTACT</p>
+        <h2>도매·입점·납품 상담을<br>환영합니다.</h2>
+        <p>취급 제품, 공급 조건, 유통 및 입점 관련 문의를 남겨주세요.</p>
+        <div class="contact-info">
+          <a href="tel:0319236255">031-923-6255</a>
+          <a href="mailto:kjh910418@gmail.com">kjh910418@gmail.com</a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" onsubmit="sendMail(event)">
+        <label>회사명<input id="company" type="text" placeholder="회사명을 입력해 주세요"></label>
+        <label>담당자명<input id="name" type="text" placeholder="담당자명을 입력해 주세요" required></label>
+        <label>연락처<input id="phone" type="tel" placeholder="연락처를 입력해 주세요" required></label>
+        <label>이메일<input id="email" type="email" placeholder="이메일을 입력해 주세요"></label>
+        <label>문의 내용<textarea id="message" rows="5" placeholder="관심 제품과 문의 내용을 입력해 주세요" required></textarea></label>
+        <button class="btn primary" type="submit">이메일로 문의하기</button>
+        <small>버튼을 누르면 기본 이메일 프로그램이 열립니다.</small>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/logo.jpg" alt="CM MARKET">
+    <div>
+      <strong>CM MARKET</strong>
+      <p>Asian Food Import & Distribution</p>
+    </div>
+    <div class="footer-contact">
+      <span>031-923-6255</span>
+      <span>kjh910418@gmail.com</span>
+    </div>
+    <p class="copyright">© 2026 CM MARKET. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
